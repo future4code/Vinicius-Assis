@@ -23,19 +23,25 @@ input {
     width: 500px;
     border: none;
     border-bottom: 2px solid black;
+    outline: none;
 }
 
 button:focus {
     color: white;
 }
 
+button{
+    outline: none;
+}
+
+a{
+    text-decoration: none;
+}
+
 img {
     width: 50px;
 }
 
-div>p:first-child {
-    display: inline;
-}
 
 .botao-amarelo {
     background-color: #ffaf43;
@@ -74,7 +80,8 @@ div>p:first-child {
 }
 
 #container-de-descricao>ol {
-    padding: 15px 0px;
+    padding: 15px 650px;
+
 }
 
 #container-para-comprar {
@@ -100,7 +107,8 @@ div:last-child {
 }
 
 table {
-    width: 100%;
+    width: 40%;
+    margin: 0 auto;
     text-align: center;
 }
 
@@ -120,6 +128,14 @@ td button:active{
     color: white;
 }
 
+.icone:hover{
+    opacity: 0.5;
+}
+
+.icone:active{
+    opacity: 100%;
+}
+
 .container-do-search {
     margin-top: 20px;
     height: 100px;
@@ -134,9 +150,11 @@ td button:active{
     border-radius: 5px;
     font-size: 10px;
     color: black;
-    position: absolute;
-    left: 50%;
     margin-top: 5%;
+}
+
+#botao-voltar{
+    text-align: center;
 }
 
 #back-button:hover {

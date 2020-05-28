@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background-color: black;
+}
+
+.menu{
+    display: inline;
+    list-style: none;
+    text-decoration: none;
+}
+h1.menu{
+    color: rgb(155, 17,30);
+    margin-left: 55px;
+}
+
+h2.menu{
+    text-transform: uppercase;
+    margin-left: 380px;
+    padding-left: 100px;
+    font-size: 20px;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+a:hover{
+    
+}
+
+a.link{
+    color: black;
+}
+
+#rodape{
+    position: absolute;
+    width: 93.5%;
+    background-color: slateblue;
+    bottom: 0;
+    padding: 50px;
+    text-align: center;
+}
+
+.rodape{
+  margin-left: 250px;
+}

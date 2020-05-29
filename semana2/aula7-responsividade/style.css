@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: grid;
+    grid-template-columns: repeat(119, 1fr);
+    grid-template-rows: repeat(70, 1fr);
+}
+
+div{
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+#lista-um{
+    background-color: gray;
+    grid-column: 1/19;
+    grid-row: 1/121;
+}
+
+.header{
+    background-color: red;
+    width: 100%;
+    grid-column: 6/120;
+    grid-row: 1/6;
+}
+
+#um{
+    background-color: blue;
+    grid-row: 7/14;
+    grid-column: 20/52;
+    border: 1px solid black;
+}
+
+#dois{
+    background-color: yellow;
+    grid-row: 7/14;
+    grid-column: 54/85;
+    border: 1px solid black;
+}
+
+#tres{
+    background-color: green;
+    grid-row: 7/14;
+    grid-column: 87/119;
+    border: 1px solid black;
+}
+
+@media screen and (min-device-width: 421px) and (max-device-width){
+    #tres{
+    
+    }
+}
+
+#quatro{
+    background-color: blue;
+    grid-row: 15/22;
+    grid-column: 20/52;
+    border: 1px solid black;
+}
+
+#cinco{
+    background-color: yellow;
+    grid-row: 15/22;
+    grid-column: 54/85;
+    border: 1px solid black;
+}
+
+#seis{
+    background-color: green;
+    grid-row: 15/22;
+    grid-column: 87/119;
+    border: 1px solid black;
+}
+
+#sete{
+    background-color: black;
+    grid-row: 24/56;
+    grid-column: 20/68;
+    color: white;
+}
+
+#oito{
+    background-color: black;
+    color: white;
+    grid-row: 24/56;
+    grid-column: 70/119;
+}
+
+#nove{
+    border: 1px solid black;
+    grid-row: 58/65;
+    grid-column: 20/68;
+}
+
+#dez{
+    border: 1px solid black;
+    grid-row: 58/65;
+    grid-column: 70/119;
+}

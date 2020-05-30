@@ -7,6 +7,7 @@ body{
     display: grid;
     grid-template-columns: repeat(119, 1fr);
     grid-template-rows: repeat(70, 1fr);
+    height: 100vh;
 }
 
 div{
@@ -26,6 +27,10 @@ div{
     width: 100%;
     grid-column: 6/120;
     grid-row: 1/6;
+}
+
+.bla{
+    height: 100%;
 }
 
 #um{
@@ -93,11 +98,17 @@ div{
 #nove{
     border: 1px solid black;
     grid-row: 58/65;
-    grid-column: 20/68;
+    grid-column: 20/52;
 }
 
 #dez{
     border: 1px solid black;
     grid-row: 58/65;
-    grid-column: 70/119;
+    grid-column: 54/85;
+}
+
+#onze{
+    border: 1px solid black;
+    grid-row: 58/65;
+    grid-column: 87/119;
 }

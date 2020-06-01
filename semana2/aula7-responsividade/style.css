@@ -1,0 +1,154 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: grid;
+    grid-template-columns: 0.4fr 3fr;
+    grid-template-rows: 1fr 4fr 4fr 2fr;
+    height: 100vh;
+}
+div{
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+#lista-um{
+    background-color: gray;
+    grid-row: 1/7;
+    grid-column: 1/2;
+}
+
+.header{
+    background-color: red;
+    grid-row: 1/2;
+    grid-column: 2/3;
+}
+
+.container-um{
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    grid-template-rows: 2fr 2fr;
+    grid-gap: 20px 20px;
+    margin-top: 12px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 12px;
+}
+
+#um{
+    background-color: blue;
+    border: 1px solid black;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    width: 100%;
+    height: 100%;
+}
+
+#dois{
+    background-color: yellow;
+    border: 1px solid black;
+    width: 100%;
+    height: 100%;
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+#tres{
+    background-color: green;
+    border: 1px solid black;
+    width: 100%;
+    height: 100%;
+    grid-column: 3/4;
+    grid-row: 1/2;
+}
+
+#quatro{
+    background-color: blue;
+    border: 1px solid black;
+    width: 100%;
+    height: 100%;
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+#cinco{
+    background-color: yellow;
+    border: 1px solid black;
+    width: 100%;
+    height: 100%;
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+#seis{
+    background-color:green;
+    border: 1px solid black;
+    width: 100%;
+    height: 100%;
+    grid-column: 3/4;
+    grid-row: 2/3;
+}
+
+.container-dois{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 20px 20px;
+    margin-top: 12px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 12px;
+}
+
+#sete{
+    background-color: black;
+    border: 1px solid black;
+    color: white;
+    width: 100%;
+    height: 100%;
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+#oito{
+    background-color: black;
+    border: 1px solid black;
+    color: white;
+    width: 100%;
+    height: 100%;
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+.container-tres{
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    grid-template-rows: 4fr;
+    grid-gap: 20px 20px;
+    margin-top: 12px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 12px;
+}
+
+#nove{
+    border: 1px solid black;
+    width: 100%;
+    height: 100%;
+}
+
+#dez{
+    border: 1px solid black;
+    width: 100%;
+    height: 100%;
+}
+
+#onze{
+    border: 1px solid black;
+    width: 100%;
+    height: 100%;
+}
+
+

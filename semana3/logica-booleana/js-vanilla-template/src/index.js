@@ -111,5 +111,5 @@ console.log("Resposta= "+ filme)*/
 
 let h = prompt("Digite as horas do seu consumo")
 qr = 0,05
-consumo = h*qr
-console.log(consumo)
+let consumo = (0,05) * (h)
+console.log("O valor a ser pago será de= "+ consumo)

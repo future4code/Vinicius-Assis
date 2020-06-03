@@ -1,115 +1,159 @@
-//---Exercicio 1---//
+//Exercicio 1
+/*const respostaDoUsuario = prompt("Digite o número que você quer testar?")
+const numero = Number(respostaDoUsuario)
 
-/*const bool1 = true
-const bool2 = false
-const bool3 = !bool2
+if(numero % 2 === 0) {
+  console.log("Passou no teste.")
+} else {
+  console.log("Não passou no teste.")}*/
+//R= Este teste realiza uma divisão do numero digitado pelo usuário por 2.
+//R= Imprime numeros pares, pois esses números ao serem divididos por dois não tem nenhum resto.
+//R= Para números impares, pois são aprovados apenas números que não deixam resto ao serem divididos por 2.
 
-let resultado = bool1 && bool2 && bool3
-console.log("a. ", resultado) // R= False, pois o sinal && só será verdadeira se todos os boleanos forem verdadeiros "true".
+//Exercicio2
 
-resultado = (bool2 || bool1) && !bool3
-console.log("b. ", resultado) // R= Dentro do parenteses é true...como o boleano 3 é o contrario do boleano 2, e o boleano 2 é true agora, então o boleano 3 é false. Como o && só fica true se todos forem true, a resposta é false.
+/*let fruta = prompt("Escolha uma fruta")
+let preco
+switch (fruta) {
+  case "Laranja":
+    preco = 3.5
+    break;
+  case "Maçã":
+    preco = 2.25
+    break;
+  case "Uva":
+    preco = 0.30
+    break;
+  case "Pêra":
+    preco = 5.5
+    break; // BREAK PARA O ITEM d.
+  default:
+    preco = 5
+    break;
+}
+console.log("O preço da fruta ", fruta, " é ", "R$ ", preco)*/
+//a)R= Para o usuário vizualizar o preço da fruta que ele selecionou.
+//b)R= O preço que aparecerá será de 2.25.
+//c)R= 24.55.
+//d)R= O valor da Pêra fica de 5.
 
-resultado = !resultado && (bool1 || bool1)
-console.log("c. ", resultado) // R= True, prq o resultado o resultado do parenteses é true, e o oposto do ultimo resultado, é true. Então fica True && True. Resultado true.
+//Exercício 3
 
-resultado = (resultado && (!bool1 || bool2)) && !bool3
-console.log("d. ", resultado) // R= False, pois dentro do primeiro parenteses é false, pois o contarrio do bool1 que é true, é false. False||bool2 que é false, fica false. Então o resultado do parenteses é false. O resultado anterior (TRUE) & FALSE, igual a false. False e o oposto do bool3, bool 3 é true mas fica false por ser o oposto dele. False && False = False.
+/*const numero1 = prompt("Digite o primeiro número.")
+const numero2 = prompt("Digite o próximo número?")
 
-console.log("e. ", typeof resultado) // R= Resultado de tipo boleano. Pelos caracteres utilizados.*/
+if(numero1 > 0 && numero2 > 0) {
+  let mensagem
+  if(numero1 > numero2) {
+    mensagem = "Número 1 é maior que o 2!"
+  } else {
+    mensagem = "Número 1 é menor ou igual ao 2!"
+  }
+}
 
-//---Exercicio 2---//
+console.log(mensagem)*/
+//R= Dá erro, pois o comando console não consegue ler as o valor das variaveis nos blocos.
 
-/*let array
-console.log('I. ', array)
+//-----Exercicios de código-----//
 
-array = null
-console.log('II. ', array)
+//Exercicio 4
 
+//a) R= Não acontecia nada
+/*let numberOne = Number(prompt("Digite o primeiro número:"))
+let numberTwo = Number(prompt("Digite um segundo número:"))
 
-array = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
-console.log('III. ', array.length)
+if(numberOne > numberTwo){
+        console.log(numberOne,numberTwo)
+} else if(numberOne < numberTwo){
+        console.log(numberTwo,numberOne)  // R= Não acontecia nada quando colocava números iguais          
+}*/
+//b)
+/*let numberOne = Number(prompt("Digite o primeiro número:"))
+let numberTwo = Number(prompt("Digite um segundo número:"))
+let numberTree = Number(prompt("Digite um terceiro número:"))
 
-let i = 0
-console.log('IV. ', array[i], " e ", array[i+1])
+if((numberOne > numberTwo) && (numberTwo > numberTree)){
+        console.log(numberOne,numberTwo,numberTree)
+} else if((numberOne < numberTwo) && (numberOne > numberTree)){
+        console.log(numberTwo,numberOne,numberTree) 
+} else if((numberTree > numberOne) && (numberOne > numberTwo)){
+        console.log(numberTree,numberOne,numberTwo) 
+} else if((numberTree > numberTwo) && (numberTwo > numberOne)){
+        console.log(numberTree,numberTwo,numberOne)
+} else if((numberTwo > numberTree) && (numberTree > numberOne)){
+        console.log(numberTwo,numberTree,numberOne)
+} else if((numberOne > numberTwo) && (numberTwo < numberTree)){
+        console.log(numberOne,numberTree,numberTwo) //Não acontece nada
+}*/
 
-array[i+1] = 19
-const valor = array[i+6]
-console.log('V. ', array[i+1], " e ", valor)
+//c)
+/*let numberOne = Number(prompt("Digite o primeiro número:"))
+let numberTwo = Number(prompt("Digite um segundo número:"))
+let numberTree = Number(prompt("Digite um terceiro número:"))
 
-i+=1
-array[i] = array[i-1]
-console.log('VI. ', array[i])
+if((numberOne > numberTwo) && (numberTwo > numberTree)){
+        console.log(numberOne,numberTwo,numberTree)
+} else if((numberOne < numberTwo) && (numberOne > numberTree)){
+        console.log(numberTwo,numberOne,numberTree) 
+} else if((numberTree > numberOne) && (numberOne > numberTwo)){
+        console.log(numberTree,numberOne,numberTwo) 
+} else if((numberTree > numberTwo) && (numberTwo > numberOne)){
+        console.log(numberTree,numberTwo,numberOne)
+} else if((numberTwo > numberTree) && (numberTree > numberOne)){
+        console.log(numberTwo,numberTree,numberOne)
+} else if((numberOne > numberTwo) && (numberTwo < numberTree)){
+        console.log(numberOne,numberTree,numberTwo)
+}else{
+    console.log("Os números digitados foram iguais, digite ao menos um número diferente")
+}*/
 
-i = array.length - 1
-array[i] = array[i-3]
-const resultadoC = array[i]%array[1]
-console.log('VII. ', resultadoC)*/
+//Exercicio 5
 
-/*a. O que é `array` e como se declara em `JS`? //R= Possibilita colocarmos varios valores em uma propiedade. Se declara com colchetes.
-
-b. Qual o index inicial de um `array`? //R= 0.
-
-c. Como se determinar o tamanho do `array`? //R= Colocar -> console.log(array.length) para mostrar qual quantos itens tem nela. 
-
-d. Indique todas as mensagens impressas no console. 
-//R=
-        I.  undefined R=(Não foi dado nenhum valor a array)
-        II.  null R=(Foi dado um valor nulo)
-        III.  11 R=(Mostra quantos itens tem na array)
-        IV.  3  e  4 R=(Pega o prinmeiro item da array, e após isso, pega o numero seguinte ao primeiro.)
-        V.  19  e  9 R=(Pegou o i q indica o primeiro itwm da array, (valor 3), +6. Fica nove. Imprime o i+1+19 e imprime o resultado da i+6)
-        VI.  3 R=(Printa o i que é o item 0 que tem valor 3.)
-        VII.  1 R=(i=12, i-3 = 9. 9 dividido pela array 1. 9%4 = 8 com resto 1)*/
-
-    
-/*-----Exercícios de escrita de código-----*/
-
-/*Exercicio 1*/
-
-/*a-*/
-//let F = 77
-//K = (F - 32)*5/9 + 273.15
-//console.log(K)
-
-/*b-*/
-//let C = 80
-//F = (C)*9/5 + 32
-//console.log(F)
-
-/*c-*/
-//C = 30
-//F = (C)*9/5 + 32
-//K = (F - 32)*5/9 + 273.15
-//console.log("30 graus Celsius em FAHRENHEIT= "+ F)
-//console.log("30 graus Celsius em KELVIN= " +K)
-
-/*d-*/
-/*let C = prompt("Quantos graus faz aí?")
-F = (C)*9/5 + 32
-K = (F - 32)*5/9 + 273.15
-console.log(C +" graus Celsius em FAHRENHEIT= "+ F)
-console.log(C +" graus Celsius em KELVIN= " +K)*/
-
-/*Exercicio 2*/
-/*let endereco = prompt("Qual o seu endereço?")
-console.log("Resposta= "+ endereco)
-
-let cor = prompt("Qual sua cor preferida?")
-console.log("Resposta= "+cor)
-
-let nome = prompt("Qual o seu nome?")
-console.log("Resposta= "+ nome)
-
-let sobrenome = prompt("Qual o seu sobrenome?")
-console.log("Resposta= "+ sobrenome)
-
-let filme = prompt("Qual o seu filme favorito?")
-console.log("Resposta= "+ filme)*/
-
-/*Exercicio 3*/
-
-let h = prompt("Digite as horas do seu consumo")
-qr = 0,05
-let consumo = (0,05) * (h)
-console.log("O valor a ser pago será de= "+ consumo)
+let animal = prompt("Digite o nome do animal")
+let espinha = prompt("Esse animal é vertebrado?")
+switch(espinha){
+        case"sim":
+        let pelo = prompt("Esse animal possuiu pelos?")
+        switch(pelo){
+                case"sim":
+                let mamifero = prompt("Esse animal é um mamifero?")
+                switch(mamifero){
+                        case"sim":
+                        let tipo = prompt("Esse mamifero é racional?")
+                        switch(tipo){
+                                case"sim":
+                                console.log("Seu animal é o Ser Humano")
+                        }
+                        break
+                        case"não":
+                        console.log("Seu animal é um mamifero não racional!")
+                }
+                break
+                case"não":
+                let penas = prompt("Esse animal possui penas?")
+                switch(penas){
+                        case"sim":
+                        console.log("Seu animal é uma ave!")
+                        break
+                        case"não":
+                        let terra = prompt("Seu animal é um animal terrestre?")
+                        switch(terra){
+                                case"sim":
+                                let anfibio = prompt("Seu animal passa parte de sua vida na água?")
+                                switch(anfibio){
+                                        case"sim":
+                                        console.log("Seu animal é um anfibio!")
+                                        break
+                                        case"não":
+                                        console.log("Seu animal é um réptil!")
+                                }
+                                break
+                                case"não":
+                                console.log("Seu animal é um peixe!")
+                        }
+                }
+        }
+        break
+        case"não":
+        console.log("Seu animal é um invertebrado!")
+}

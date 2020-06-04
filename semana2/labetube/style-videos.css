@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5%;
+}
+
+header{
+    background-color: orange;
+    width: 100%;
+}
+
+#share{
+    margin-right: 5%;
+    padding: 1%;
+    width: 8%;
+}
+
+h1{
+    text-align: left;
+}
+
+main{
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+video{
+    width: 80%;
+    height: 1%;
+    margin-bottom: 1%;
+}
+
+footer{
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    padding: 0.5%;
+}
+
+footer{
+    background-color: gray;
+    color: white;
+    font-size: 2em;
+}

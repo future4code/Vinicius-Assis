@@ -13,11 +13,14 @@ let idade =  Number(prompt("Digite sua idade: "))
 let endereco = prompt("Digite seu endereço: ") 
 let estudante = confirm("Você é um estudante?")
 
-const funcao = ()=>{
+const funcao = (nome, idade, endereco, estudante)=>{
     if(estudante){
-    estudante = "Sou estudante"
+    estudante = "sou estudante"
     }else{
-    estudante = "Não sou estudante"
+    estudante = "não sou estudante"
     }
+    let mensagem = `Eu sou o ${nome}, tenho ${idade} anos, moro em ${endereco}, e ${estudante}`
+    return mensagem
 }
-console.log(`Eu sou o ${nome}, tenho ${idade} anos, moro em ${endereco}, e ${estudante}`)
+
+    console.log(funcao(nome, idade, endereco, estudante))

@@ -34,7 +34,7 @@ let capturaInput = ()=>{
 
     array.push(post)
 
-    console.log(array)
+   // console.log(array)
     titulo.value = ""
     autor.value = ""
     conteudo.value = ""

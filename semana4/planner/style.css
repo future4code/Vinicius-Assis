@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #8C8CA1;
+}
+
+.header{
+    background-color:#000000;
+    color: white;
+    text-align: center;
+    padding: 2%;
+    margin-bottom: 2%;
+    border: 2px solid white;
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+}
+
+h1{
+    color: white;
+}
+
+main{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 1fr;
+    height: 100vh;
+}
+
+table{
+    grid-column: 1/8;
+    grid-row: 1/3;
+}
+
+td{
+    border: 5px solid black;
+}
+
+.dias-semana{
+    border: 2px solid black;
+    width: 80px;
+}
+
+li{
+    margin-left: 10%;
+}
+
+#tab-segunda,
+#tab-terca,
+#tab-quarta,
+#tab-quinta,
+#tab-sexta{
+    background-color:#303054;
+    color: white;
+}
+
+#tab-domingo,
+#tab-sabado{
+    background-color:#1D1D33;
+    color: white;
+}

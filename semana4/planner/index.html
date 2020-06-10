@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <h1>Minha Semana</h1>
+        <div>
+            <label for="nova-tarefa">Nova Tarefa</label>
+            <input type="text" value="" id="input">
+            <select name="Dias" id="dias">
+                <option value="segunda">Segunda-Feira</option>
+                <option value="terca">Terça-Feira</option>
+                <option value="quarta">Quarta-Feira</option>
+                <option value="quinta">Quinta-Feira</option>
+                <option value="sexta">Sexta-Feira</option>
+                <option value="sabado">Sábado</option>
+                <option value="domingo">Domingo</option>
+            </select>
+            <button onclick="cronograma()">Criar tarefa</button>
+        </div>
+    </header>
+    <main>
+        <table>
+            <tr>
+                <th class="dias-semana">Segunda</th>
+                <th class="dias-semana">Terça</th>
+                <th class="dias-semana">Quarta</th>
+                <th class="dias-semana">Quinta</th>
+                <th class="dias-semana">Sexta</th>
+                <th class="dias-semana">Sabado</th>
+                <th class="dias-semana">Domingo</th>
+            </tr>
+            <!--<tr>
+                <th><input type="text"></th>
+                <th><input type="text"></th>
+                <th><input type="text"></th>
+                <th><input type="text"></th>
+                <th><input type="text"></th>
+                <th><input type="text"></th>
+                <th><input type="text"></th>
+            </tr>-->
+            <tr>
+                <td id="tab-segunda">
+                    <ul>
+                        
+                    </ul>
+                </td>
+                <td id="tab-terca">
+                    <ul>
+                       
+                    </ul>
+                </td>
+                <td id="tab-quarta">
+                    <ul>
+                       
+                    </ul>
+                </td>
+                <td id="tab-quinta">
+                    <ul>
+                        
+                    </ul>
+                </td>
+                <td id="tab-sexta">
+                    <ul>
+                       
+                    </ul>
+                </td>
+                <td id="tab-sabado">
+                    <ul>
+                       
+                    </ul>
+                </td>
+                <td id="tab-domingo">
+                    <ul>
+                       
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </main>
+</body>
+</html>

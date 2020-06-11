@@ -12,7 +12,7 @@ const limpar = ()=>{
     select.value = ""
 }
 
-let info = []
+let infoDespesas = []
 const cadastrar = ()=>{
     let valor = document.getElementById("input-val")
     let descricao = document.getElementById("input-descri")
@@ -27,8 +27,20 @@ const cadastrar = ()=>{
         Descrição: descri,
         Tipo: tipo
     }
+    if((val === "") || (val <= 0) || (descri === "")){
+        alert("Todos os campos devem estar preenchidos ou com algum valor. Verifique os dados preenchidos.")
+    } else if(tipo === ""){
+        alert("Selecione uma opção de tipo de despesa")
+    }else{
+        infoDespesas.push(despesa)
+    }
 
-    console.log(despesa)
+    let informations = document.getElementById("informations")
+    informations.innerHTML = `<p>${despesas}</p>`
+
+    //console.log(despesa)
+    
+    console.log(infoDespesas)
 
      limpar()
 }

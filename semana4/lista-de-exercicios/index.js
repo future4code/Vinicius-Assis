@@ -29,3 +29,9 @@ array.forEach((objeto, i, a)=>{
 })
 Esse código a função forEach lê todo o array e permite utilizarmos os itens dela.
 
+2-
+a)False
+b)False
+c)True
+d)True
+e)True

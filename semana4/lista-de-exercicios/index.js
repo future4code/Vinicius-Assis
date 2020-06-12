@@ -10,3 +10,22 @@
 //Exercicios de Lógica de programação
 
 /*Respostas
+1- Podemos percorrer através do ForOf, através do For declarando uma variavel para percorrer a array (será demonstrado abaixo). E atraves do forEach. 
+Ex ForOF:
+for(let i of array){
+    
+}
+Nesse código cria uma variavel e o comando of faz ela percorrer todo o array.
+Ex For:
+
+for(let = 0; i<array.length; i++){
+
+}
+Nesse código criamos uma variavel que começa na posição 0 do array e enquanto ela for menor do que o cumprimento do array, ela vai avançando uma posição.
+Ex forEach:
+
+array.forEach((objeto, i, a)=>{
+
+})
+Esse código a função forEach lê todo o array e permite utilizarmos os itens dela.
+

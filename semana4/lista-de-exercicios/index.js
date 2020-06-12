@@ -35,3 +35,6 @@ b)False
 c)True
 d)True
 e)True
+
+3- Este código não funciona. Ele esqueceu de dar um valor para variavel e de somar o numero 1 ao valor da variavel.
+

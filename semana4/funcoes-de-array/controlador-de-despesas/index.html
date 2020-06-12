@@ -22,12 +22,12 @@
                 <label for="">Tipo (Casa, Viagem, Rolês, Outros)</label>
                 <select name="" id="despesas">
                     <option value=""></option>
-                    <option value="house">Despesas de Casa</option>
-                    <option value="party">Despesas de Festa</option>
-                    <option value="trip">Despesas de Viagem</option>
-                    <option value="food">Despesas com Alimentação</option>
-                    <option value="transport">Despesas com Transporte</option>
-                    <option value="others">Oiutros</option>
+                    <option value="casa">Despesas de Casa</option>
+                    <option value="festa">Despesas de Festa</option>
+                    <option value="viagem">Despesas de Viagem</option>
+                    <option value="comida">Despesas com Alimentação</option>
+                    <option value="transporte">Despesas com Transporte</option>
+                    <option value="outros">Oiutros</option>
                 </select>
             </section>
 
@@ -38,9 +38,6 @@
 
             <button onclick="cadastrar()">Cadastrar Despesas</button>
 
-            <section id="informations">
-                
-            </section>
         </article>
 
         <article id="detalhes">
@@ -49,12 +46,12 @@
                 <label for="">Tipo (Casa, Viagem, Rolês, Outros)</label>
                 <select id="tipo-despesas">
                     <option value=""></option>
-                    <option value="house">Despesas de Casa</option>
-                    <option value="party">Despesas de Festa</option>
-                    <option value="trip">Despesas de Viagem</option>
-                    <option value="food">Despesas com Alimentação</option>
-                    <option value="transport">Despesas com Transporte</option>
-                    <option value="others">Outros</option>
+                    <option value="casa">Despesas de Casa</option>
+                    <option value="festa">Despesas de Festa</option>
+                    <option value="viagem">Despesas de Viagem</option>
+                    <option value="comida">Despesas com Alimentação</option>
+                    <option value="transporte">Despesas com Transporte</option>
+                    <option value="outros">Outros</option>
                 </select>
             </section>
 
@@ -69,8 +66,12 @@
             </section>
 
             <section>
-                <button>Filtrar</button>
-                <button>Limpar Filtros</button>
+                <button onclick="filtro()">Filtrar</button>
+                <button onclick="limpFil()">Limpar Filtros</button>
+            </section>
+
+            <section id="informations">
+                
             </section>
         </article>
 

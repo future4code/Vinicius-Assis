@@ -12,6 +12,20 @@ const limpar = ()=>{
     select.value = ""
 }
 
+const limpFil = ()=>{
+    let valueMin = document.getElementById("input-ValMin")
+    let valueMax = document.getElementById("input-ValMax")
+    let selection = document.getElementById("tipo-despesas")
+
+    valueMin.value = ""
+    valueMax.value = ""
+    selection.value = ""
+
+    //valMin.value = ""
+    //valMax.value = ""
+    //type.value = ""
+}
+
 let infoDespesas = []
 const cadastrar = ()=>{
     let valor = document.getElementById("input-val")
@@ -34,9 +48,11 @@ const cadastrar = ()=>{
     }else{
         infoDespesas.push(despesa)
     }
-
     let informations = document.getElementById("informations")
-    informations.innerHTML = `<p>${despesas}</p>`
+
+    infoDespesas.forEach((despesas, i, a)=>{
+        informations.innerHTML += `<p>Valor:  ${despesas.Valor}</p> <p>Descrição: ${despesas.Descrição}</p> <p>Tipo:  ${despesas.Tipo}</p>`
+    })
 
     //console.log(despesa)
     
@@ -44,3 +60,11 @@ const cadastrar = ()=>{
 
      limpar()
 }
+
+/*const filtro = ()=>{
+    infoDespesas.filter((tipo, i, a)=>{
+        if(selection.value === "casa"){
+            informations.innerHTML += `${}`
+        }
+    })
+}*/

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <main>
+
+        <article id="controlador">
+            <h1>Controlador de Despesas</h1>
+            <h3>Cadastrar Despesa</h3>
+            <section>
+                <label for="">Valor</label>
+                <input type="number" value="" id="input-val">
+            </section>
+
+            <section>
+                <label for="">Tipo (Casa, Viagem, Rolês, Outros)</label>
+                <select name="" id="despesas">
+                    <option value=""></option>
+                    <option value="casa">Despesas de Casa</option>
+                    <option value="festa">Despesas de Festa</option>
+                    <option value="viagem">Despesas de Viagem</option>
+                    <option value="comida">Despesas com Alimentação</option>
+                    <option value="transporte">Despesas com Transporte</option>
+                    <option value="outros">Oiutros</option>
+                </select>
+            </section>
+
+            <section>
+                <label for="">Descrição</label>
+                <input type="text" value="" id="input-descri">
+            </section>
+
+            <button onclick="cadastrar()">Cadastrar Despesas</button>
+
+        </article>
+
+        <article id="detalhes">
+            <h1>Despesas Detalhadas</h1>
+            <section>
+                <label for="">Tipo (Casa, Viagem, Rolês, Outros)</label>
+                <select id="tipo-despesas">
+                    <option value=""></option>
+                    <option value="casa">Despesas de Casa</option>
+                    <option value="festa">Despesas de Festa</option>
+                    <option value="viagem">Despesas de Viagem</option>
+                    <option value="comida">Despesas com Alimentação</option>
+                    <option value="transporte">Despesas com Transporte</option>
+                    <option value="outros">Outros</option>
+                </select>
+            </section>
+
+            <section>
+                <label for="">Valor Mínimo</label>
+                <input type="number" id="input-ValMin">
+            </section>
+
+            <section>
+                <label for="">Valor Máximo</label>
+                <input type="number" id="input-ValMax">
+            </section>
+
+            <section>
+                <button onclick="filtro()">Filtrar</button>
+                <button onclick="limpFil()">Limpar Filtros</button>
+            </section>
+
+            <section id="informations">
+                
+            </section>
+        </article>
+
+        <article id="extrato">
+            <section>
+                <h1>Extrato</h1>
+                <h3>Valor Total:</h3>
+            </section>
+        </article>
+    </main>
+</body>
+</html>

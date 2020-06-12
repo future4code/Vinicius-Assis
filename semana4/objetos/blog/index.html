@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+</head>
+<body>
+
+    <header class="cabecalho">
+        <h1>Blog Students</h1>
+    </header>
+
+    <h3>Bem Vindo ao blog dos estudantes da Labenu!</h3>
+
+    <main>
+        <div id="div-titulo">
+            <label for="">Titulo</label>
+        <input type="text" value="" id="input-titulo" onkeydown="enviaEnter(event)">
+        </div>
+        <div id="div-autor">
+            <label for="">Autor</label>
+        <input type="text" value="" id="input-autor" onkeydown="enviaEnter(event)">
+        </div>
+        <div id="div-conteudo">
+            <label for="">Conteudo</label>
+        <textarea type="text" value="" id="input-conteudo" onkeydown="enviaEnter(event)"></textarea>
+        </div>
+        
+        
+        <button id="botao" onclick="capturaInput()">ENVIAR</button>
+
+        <div id="conteudo-post"></div>
+    </main>
+    <footer class="rodape">
+        <h1>Obrigado por visitar nosso Blog</h1>
+    </footer>
+</body>
+</html>

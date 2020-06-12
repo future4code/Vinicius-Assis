@@ -2,3 +2,4 @@
 
 /* Respostas
 1- Nesse exercicio a função conversor de moeda recebe o parâmetro valorEmDolar. A cotação será definida pelo usuário atrávez do prompt. Irá retornar o valor do parâmetro da função multiplicado pela a cotação do dólar. No caso será impresso no console, o valor da constante meuDinheiro que será o resultado dessa função tendo como valorEmDolar 100, que será multiplicado pela cotação que o usuário digitar.
+2- A Switch execute de uma maneira de acordo com os casos executados pelo usuário. Nesse caso, a função executa de acordo com o tipo de investimento que o usuário escolher. Na constante novoMontante, será executada o caso Ações na Switch com o valor de 150. Então vai ser o valor 150 multiplicado por 1.1 que é a função executada nesse caso. Na constante segundoMontante, não será executado nada. Pois o tipo de investimento solicitado não existe. Então será exibido o alert com a mensagem do default da Switch.

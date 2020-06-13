@@ -109,3 +109,98 @@ let val = (um, dois)=>{
 }
 
 val(numUm, numDois)*/
+
+// Exercicios de Funções
+
+/*1-
+const num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+let fun = (array)=>{
+    let a = Infinity
+    let b = 0
+
+    for(let i of array){
+        if(i < a){
+            a = i
+        }
+        if(i > b){
+            b = i
+        }
+    }
+    array = array.filter((e, i, arr)=>{
+        return e !== a
+    })
+    array = array.filter((e, i, arr)=>{
+        return e !== b
+    })
+    a = Infinity
+    b = 0
+    
+    for(let i of array){
+        if(i < a){
+            a = i
+        }
+        if(i > b){
+            b = i
+        }
+    }
+    console.log(`O segundo menor é ${a} e o segundo maior é ${b}`)
+}
+
+fun(num)*/
+
+/*2-
+
+let nome = ()=>{
+    alert("Hello Labenu")
+}
+nome()*/
+
+//Exercicios de Objetos
+
+/*1- Quando formos armazenar informações de um objeto ou quisermos reutilizar as propriedades de um objeto.*/
+
+//2-
+/*let lado1 = Number(prompt("")) 
+let lado2 = Number(prompt("")) 
+
+let criaRetangulo = (lUm, lDois)=>{
+    return {
+        Largura: lUm,
+        Altura: lDois,
+        Perimetro: (lUm + lDois) * 2,
+        Area: lUm * lDois
+    }
+}
+console.log(criaRetangulo(lado1, lado2))*/
+
+//3-
+/*let filme = {
+    Titulo: "O Resgate do Soldade Ryan",
+    Ano: 1998,
+    Diretor: "Steven Spielberg",
+    Atores: ["Tom Hanks", "Matt Damon", "Vin Diesel", "Adam Goldberg"]
+}
+
+console.log(`Venha assistir ao filme ${filme.Titulo}, de ${filme.Ano}, dirigido por ${filme.Diretor} e estrelado por ${filme.Atores}`)*/
+
+//4-
+/*let nome = prompt("Digite seu nome: ")
+let idade = Number(prompt("Digite sua idade: "))
+let email = prompt("Digite seu email")
+let endereco = prompt("Digite seu endereço: ")
+
+let person = {
+    Nome: nome,
+    Idade: idade,
+    Email: email,
+    Endereço: endereco
+}
+
+let anonimizarPessoa = (a)=>{
+    a.Nome = "Anônimo"
+}
+
+anonimizarPessoa(person)
+
+console.log(person)*/

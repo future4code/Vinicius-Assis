@@ -18,7 +18,7 @@ for(let i of array){
 Nesse código cria uma variavel e o comando of faz ela percorrer todo o array.
 Ex For:
 
-for(let = 0; i<array.length; i++){
+for(let i = 0; i<array.length; i++){
 
 }
 Nesse código criamos uma variavel que começa na posição 0 do array e enquanto ela for menor do que o cumprimento do array, ela vai avançando uma posição.
@@ -36,5 +36,76 @@ c)True
 d)True
 e)True
 
-3- Este código não funciona. Ele esqueceu de dar um valor para variavel e de somar o numero 1 ao valor da variavel.
+3- Este código não funciona. Ele esqueceu de dar um valor para variavel e de somar o numero 1 ao valor da variavel.*/
 
+/*
+4-
+let ladoA = Number(prompt("Digite o valor do primeiro lado do seu triangulo"))
+let ladoB = Number(prompt("Digite o valo do segundo lado do seu triangulo"))
+let ladoC = Number(prompt("Digite o valo do terceiro lado do seu triangulo"))
+
+let tipoTriangulo = (A, B, C)=>{
+    if(A === B && B === C){
+        alert("Seu triângulo é Equilátero")
+    }else if(A === B || A === C || B == C){
+        alert("Seu triângulo é Isósceles")
+    }else{
+        alert("Seu triângulo é Escaleno ")
+    }
+}
+
+tipoTriangulo(ladoA, ladoB, ladoC)*/
+
+/*
+5-
+
+let numUm = Number(prompt("Digite um número"))
+let numDois = Number(prompt("Digite outro número"))
+
+console.log(`Entrada: ${numUm} e ${numDois}`)
+
+let diferenca = (primeiro, segundo)=>{
+    if(primeiro > segundo){
+        console.log(`O maior é ${primeiro}`)
+    }else if(segundo > primeiro){
+        console.log(`O maior é: ${segundo}`)
+    }else{
+        console.log("Os números são iguais")
+    }
+}
+
+diferenca(numUm, numDois)
+
+let divisiveis = (a, b)=>{
+    if(a % b !== 0 && b % a !== 0){
+        console.log("Esses números não são divisiveis")
+    }else if(a % b !== 0){
+        console.log(`${a} não é divisivel por ${b}`)
+    }else if(b % a !== 0){
+        console.log(`${b} não é divisivel por ${a}`)
+    }
+}
+
+divisiveis(numUm, numDois)
+
+let naoDivisiveis = (a, b)=>{
+    if(a % b === 0){
+        console.log(`${a} é divisivel por ${b}`)
+    }else if(b % a === 0){
+        console.log(`${b} é divisivel por ${a}`)
+    }
+}
+
+naoDivisiveis(numUm, numDois)
+
+let val = (um, dois)=>{
+    if(um > dois){
+        let valor = um - dois
+        console.log(`A diferença entre eles é ${valor}`)
+    }else if(dois > um){
+        let valor = dois - um
+        console.log(`A diferença entre eles é ${valor}`)
+    }
+}
+
+val(numUm, numDois)*/

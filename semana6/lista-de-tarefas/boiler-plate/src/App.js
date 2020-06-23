@@ -20,26 +20,23 @@ const InputsContainer = styled.div`
 
 class App extends React.Component {
     state = {
-      tarefas: [{
-        id: Date.now(),
-        texto: "Texto da tarefa",
-        completa: false,
-      },
-      {
-        id: Date.now(),
-        texto: "Texto da tarefa",
-        completa: true,
-      }],
+      tarefas: [],
       inputValue: '',
       filter: '',
     }
-
+  
   componentDidUpdate() {
-
+    localStorage.setItem("tarefas", JSON.stringify(this.state.tarefas))
   };
 
   componentDidMount() {
-
+    if(localStorage.getItem("tarefas")){
+      const tarefaSalva = localStorage.getItem("tarefas")
+      const tarefaObj = JSON.parse(tarefaSalva)
+      this.setState({
+        tarefas: tarefaObj
+      })
+    }
   };
 
   onChangeInput = (event) => {
@@ -59,11 +56,14 @@ class App extends React.Component {
     })
   }
 
-  /*selectTarefa = (id) => {
+  selectTarefa = (id) => {
     const riscar = this.state.tarefas.map(tarefa =>{
-      tarefa.id === id ? return ...tarefa, completa: !tarefa.completa : return tarefa
+    return  (tarefa.id === id) ?  {...tarefa, completa: !tarefa.completa} : tarefa
     })
-  }*/
+    this.setState({
+      tarefas: riscar
+    })
+  }
 
   onChangeFilter = (event) => {
     this.setState({filter: event.target.value})

@@ -1,15 +1,67 @@
 import React from 'react';
-import style from "styled-components";
-import Botao from "./Botao";
-import App from "../App";
+import styled from "styled-components";
+import Registro from "./Registro";
+import axios from "axios";
+
+const Deletar = styled.button`
+color: red;
+background-color: white;
+border: none;
+`
+const axiosConfig = {
+    headers: {
+        Authorization: "vinicius-fredeanelle-turing"
+    }
+}
+const myUrl = "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users"
 
 class ListaRegistro extends React.Component{
+    state={
+        Registros:[],
+    }
+
+    componentDidMount = ()=>{
+        this.getAllUsers()
+    }
+
+    getAllUsers = ()=>{
+        axios
+            .get(
+                myUrl, 
+                axiosConfig
+            )
+            .then(response=>{
+                this.setState({Registros: response.data})
+            }).catch(err => {
+                console.log(err.message)
+            })
+        }
+
+    deletUsuario = (usuarioid)=>{
+        axios
+            .delete(
+                `${myUrl}/${usuarioid}`,
+                axiosConfig,
+            )
+            .then(()=>{
+                this.getAllUsers()
+            })
+            .catch(error => {
+                console.log(error.message)
+            })
+    }
     render(){
 
         return(
-            <div>
-                 
-            </div>
+            <ul>
+                {this.state.Registros.length === 0 && <div>Carregando...</div>}
+                {this.state.Registros.map(usuario =>{
+                    return <li key={usuario.id}>
+                        {usuario.name} 
+                        <Deletar onClick={() => {this.deletUsuario(usuario.id)}}>X</Deletar>
+                        </li>
+                })}
+            </ul>
         )
     }
 

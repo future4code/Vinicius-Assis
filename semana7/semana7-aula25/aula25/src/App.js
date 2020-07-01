@@ -3,7 +3,6 @@ import './App.css';
 import styled from "styled-components";
 import Registro from "./components/Registro";
 import ListaRegistro from "./components/ListaRegistros";
-import Botao from "./components/Botao"
 
 const Div = styled.div`
 background-color: white;
@@ -15,19 +14,31 @@ color: white;
 
 class App extends React.Component{
     state={
-      registro: false,
+      registro: "Registro",
     }
 
     handleClickCarrinho = () => {
-      this.setState({ registro: !this.state.registro });
-  };
+      if (this.state.registro === "Registro") {
+        this.setState({ registro: "Lista" });
+      } else {
+        this.setState({ registro: "Registro" });
+      }
+    };
+  
 
   render(){
-    
-    const renderiza = this.state.registro ? <ListaRegistro /> : <Registro />;
-    return <Div>{renderiza}
-      <Botao clicar={this.handleClickCarrinho} next={"Aaaaaaaaa"}></Botao> 
+    const renderiza = this.state.registro === "Registro" ? <Registro /> : <ListaRegistro />;
+    const nomeDoBotao = this.state.registro === "Registro" ?  "Ir para Lista de Registros" : "Ir para Cadastro";
+
+    return(
+      <div>
+        <button onClick={this.handleClickCarrinho}>{nomeDoBotao}</button> 
+      <Div>{renderiza}
+      
       </Div>
+      </div>
+      
+    ) 
   };
   
 

@@ -10,7 +10,7 @@ class Botao extends React.Component{
     render(){
 
         return(
-        <Bot onClick={this.props.clicar}>{this.props.next}</Bot>
+        <Bot onClick={this.props.clicar}></Bot>
         )
 
     }

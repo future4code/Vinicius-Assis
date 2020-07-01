@@ -1,13 +1,14 @@
 import React from 'react';
 import style from "styled-components";
+import Botao from "./Botao";
+import App from "../App";
 
 class ListaRegistro extends React.Component{
     render(){
 
         return(
             <div>
-                 <button>Ir para página de Registro</button>
-                <h1>Olá!!!!</h1>
+                 
             </div>
         )
     }

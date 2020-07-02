@@ -7,12 +7,12 @@ const Main = styled.main`
 color: red;
 text-align: center;
 `
-const links = "https://swapi.dev/api/people";
+const links = "https://pokeapi.co/api/v2/pokemon";
 
 class App extends React.Component{
   state={
     Pokemons:[],
-    PokeNome: "",
+    PokeImagem: "",
   }
 
   componentDidMount = () =>{
@@ -34,13 +34,14 @@ class App extends React.Component{
    axios
    .get(`${links}/${pokeNome}`)
    .then(response => {
-     console.log(response.data)
+     this.setState({
+       PokeImagem: response.data.sprites.front_default
+     })
    }).catch(e => {
      console.log(e.message)
    })
   }
   render(){
-    console.log(this.state.PokeNome)
     return (
       <Main>
         <select onChange={this.onChangePokenome}>
@@ -49,6 +50,10 @@ class App extends React.Component{
             return <option key={pok.name} value={pok.name}>{pok.name}</option>
           })}
         </select>
+        <div>
+          {this.state.PokeImagem && (<img src={this.state.PokeImagem} alt="Pokemon" />)}
+        </div>
+        
       </Main>
     );
   }

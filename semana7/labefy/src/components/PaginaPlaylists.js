@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
 import axios from "axios";
-import Variaveis from "./Variaveis";
 
 const Main = styled.main`
 height: 100vh;
@@ -9,6 +8,14 @@ height: 100vh;
 const Div = styled.div`
 text-align: ${props => props.align};
 `;
+
+const link = "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists"
+const axiosConfig = {
+    headers: {
+      Authorization: "vinicius-fredeanelle-turing"
+    }
+  };
+  
 class PaginaPlaylists extends React.Component{
  state={
    Pagina: "CriaPlaylista",
@@ -22,7 +29,7 @@ class PaginaPlaylists extends React.Component{
  }
  pegaPlaylist = () =>{
    axios
-      .get(Variaveis)
+      .get()
       .then(response=>{
 
       })

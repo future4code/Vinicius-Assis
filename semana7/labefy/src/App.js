@@ -1,8 +1,6 @@
 import React from 'react';
 import './App.css';
 import styled from "styled-components";
-import axios from "axios";
-import Variaveis from "./components/Variaveis";
 import PaginaPlaylists from "./components/PaginaPlaylists";
 import CriarPlaylist from "./components/CriarPlaylist";
 
@@ -15,16 +13,8 @@ text-align: ${props => props.align};
 class App extends React.Component{
  state={
    Pagina: "Cadastro",
-   NomePlaylist: "",
  }
 
- pegaPlaylist = () =>{
-   axios
-      .get(Variaveis)
-      .then(response=>{
-
-      })
- }
  mudaBotao = ()=>{
 
    if(this.state.Pagina === "Cadastro"){

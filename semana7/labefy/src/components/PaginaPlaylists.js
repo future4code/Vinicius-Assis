@@ -1,13 +1,20 @@
 import React from 'react';
 import styled from "styled-components";
 import axios from "axios";
+import Musicas from "./MusicasPlaylist"
 
-const Main = styled.main`
-height: 100vh;
-`
 const Div = styled.div`
 text-align: ${props => props.align};
 `;
+
+const DeletarPlaylist = styled.img`
+  height: 25px;
+`;
+
+const Button = styled.button`
+border: none;
+background-color: white;
+`
 
 const link = "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists"
 const axiosConfig = {
@@ -18,31 +25,76 @@ const axiosConfig = {
   
 class PaginaPlaylists extends React.Component{
  state={
-   Pagina: "CriaPlaylista",
-   Playlists: [
-     {
-      id: "1",
-      name: "",
-     },
-   ],
-   NomePlaylist: "",
+   Paginas: "B",
+   Playlists: [],
  }
+
+ componentDidMount = ()=>{
+   this.pegaPlaylist();
+ }
+
  pegaPlaylist = () =>{
    axios
-      .get()
+      .get(link, axiosConfig)
       .then(response=>{
-
+        this.setState({Playlists: response.data.result.list})
+      })
+      .catch(erro=>{
+        console.log(erro.message)
       })
  }
+ vizualisaPlaylist = playlistId =>{
+  axios
+     .get(`${link}/${playlistId}`, axiosConfig)
+     .then(() =>{
+      this.pegaPlaylist();
+     })
+     .catch(erro=>{
+       console.log(erro.message)
+     })
+}
+
+ deletePlaylist = playlistId => {
+  axios
+    .delete(`${link}/${playlistId}`, axiosConfig)
+    .then(() => {
+      this.pegaPlaylist();
+    })
+    .catch(err => {
+      console.log(err.message);
+    });
+};
+
+goMusicas = ()=>{
+  if(this.state.Paginas === "B"){
+    this.setState({
+      Paginas: "A",
+    })
+   } else{
+    this.setState({
+      Paginas: "B",
+    })
+   }
+}
+
+
 
   render(){
+    const paginas = this.state.Paginas === "A" ? <Musicas/> : <PaginaPlaylists/>
     return (
-      <Main>
-          <h1>AAAAAAAAAAAAAAAAAAAAAAAA</h1>
-      <Div align={"center"}>
-       
-      </Div>
-      </Main>
+      <div>
+        {this.state.Playlists.length === 0 && <img src={"https://desecsecurity.com/img/load_01.gif"}/> }
+        {this.state.Playlists.map(playlist => {
+          return (
+          <div>
+            <Button onClick={this.goMusicas} key={playlist.id}>
+              {playlist.name}
+            </Button>
+            <DeletarPlaylist onClick={() => {this.deletePlaylist(playlist.id)}} src={"https://imageog.flaticon.com/icons/png/512/458/458594.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF"}/>
+          </div> 
+          );
+        })}
+      </div>
     );
   }
 }

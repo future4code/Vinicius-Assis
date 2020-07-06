@@ -66,21 +66,16 @@ class PaginaPlaylists extends React.Component{
 };
 
 goMusicas = ()=>{
-  if(this.state.Paginas === "B"){
     this.setState({
       Paginas: "A",
     })
-   } else{
-    this.setState({
-      Paginas: "B",
-    })
-   }
 }
 
 
 
   render(){
-    const paginas = this.state.Paginas === "A" ? <Musicas/> : <PaginaPlaylists/>
+    const music = this.state.Paginas === "A" ? <Musicas/> : console.log
+
     return (
       <div>
         {this.state.Playlists.length === 0 && <img src={"https://desecsecurity.com/img/load_01.gif"}/> }
@@ -94,6 +89,7 @@ goMusicas = ()=>{
           </div> 
           );
         })}
+        {music}
       </div>
     );
   }

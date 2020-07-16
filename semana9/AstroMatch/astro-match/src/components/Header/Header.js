@@ -1,22 +1,15 @@
 import React from 'react';
 import styled from "styled-components"
-
 const Cabecalho = styled.header`
 background-color:;
 grid-row: 1/1;
 `
-/*a = ()=>{
-    if(body === ""){
-        setBody("Aaa")
-    }else {
-        setBody("")
-    }
-}*/
 
-function Header() {
+
+function Header(props) {
     return (
       <Cabecalho>
-       <button>Aaaaa</button>
+       <button onClick={props.a}>Matchs</button>
       </Cabecalho>
     );
   }

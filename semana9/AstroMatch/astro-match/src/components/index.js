@@ -20,21 +20,16 @@ grid-template-rows: 0.6fr 5fr 0.8fr;
 `;
 
 function Index() {
-    const [body, setBody] = useState("")
-    const teste = ()=>{
-        if(body !== ""){
-            return (
-            <BodyList/>
-        )
-        }else{
-            return (
-            <BodyMatch/>
-        )
-        }
+    const [body, setBody] = useState(true)
+
+   const a = ()=>{
+       setBody(!body)
     }
+    
+    const teste = body === true ? <BodyMatch/> : <BodyList/>
   return (
       <Main>
-        <Header/>
+        <Header a={a}/>
         {teste}
         <Footer/>
       </Main>

@@ -2,8 +2,9 @@ import React from 'react';
 import styled from "styled-components"
 
 const Button = styled.button`
-grid-column: 3/4;
+grid-column: 4/4;
 grid-row: 1/1;
+margin-right: 8px;
 display: flex;
 justify-content: center;
 width: 60px;

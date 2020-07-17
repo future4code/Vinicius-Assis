@@ -5,7 +5,7 @@ import Footer from "../Footer/Footer"
 
 
 const Div = styled.div`
-grid-column: 1/4;
+grid-column: 1/5;
 grid-row: 2/3;
 border-bottom: 1px solid black;
 border-top: 1px solid black;
@@ -16,10 +16,6 @@ height: 50px;
 `
 
 function BodyMatch(props) {
-
-  useEffect(()=>{
-    props.pegaPessoa()
-  }, [])
 
     return (
       <Div>

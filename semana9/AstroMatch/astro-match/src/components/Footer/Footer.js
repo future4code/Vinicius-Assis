@@ -47,7 +47,7 @@ function Footer(props) {
     axios
     .post(`${link}/choose-person`,body)
     .then(()=>{
-      alert(`Você deu um Match com ${props.persons.name}`)
+      props.pegaPessoa()
     }).catch(err=>{
       console.log(err.message)
     })
@@ -60,7 +60,7 @@ function Footer(props) {
     axios
     .post(`${link}/choose-person`,body)
     .then(()=>{
-      alert(`Você rejeitou ${props.persons.name}`)
+      props.pegaPessoa()
     }).catch(err=>{
       console.log(err.message)
     })

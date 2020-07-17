@@ -41,8 +41,12 @@ function Index() {
       console.log(err.message)
     })
   }
-    const teste = body === true ? <BodyMatch pegaPessoa={pegaPessoa} persons={persons}/> : <BodyList/>
-    const foot = body === true ? <Footer persons={persons} /> : console.log("Aaaa")
+  useEffect(()=>{
+    pegaPessoa()
+  }, [])
+  
+    const teste = body === true ? <BodyMatch pegaPessoa={pegaPessoa} persons={persons}/> : <BodyList persons={persons}/>
+    const foot = body === true ? <Footer persons={persons} pegaPessoa={pegaPessoa}/> : console.log("Aaaa")
   return (
       <Main>
         <Header/>

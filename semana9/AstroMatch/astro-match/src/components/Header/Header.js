@@ -3,6 +3,7 @@ import styled from "styled-components"
 
 const Cabecalho = styled.header`
 background-color:;
+grid-column: 1/4;
 grid-row: 1/1;
 display: flex;
 justify-content: center;
@@ -22,6 +23,7 @@ background: -webkit-linear-gradient(red, black);
 `
 
 const Button = styled.div`
+grid-column: 4/4;
 display: flex;
 justify-content: center;
 width: 60px;
@@ -42,9 +44,6 @@ function Header(props) {
       <Cabecalho>
         <H2>astro</H2>
         <H22>match</H22>
-        <Button onClick={props.a}>
-            <P>Matchs</P>
-        </Button>
       </Cabecalho>
     );
   }

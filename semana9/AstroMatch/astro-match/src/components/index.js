@@ -21,6 +21,14 @@ display: grid;
 grid-template-rows: 0.6fr 5fr 0.8fr;
 grid-template-columns: 1fr 1fr 0.5fr;
 `;
+const P = styled.p`
+display: flex;
+align-items: center;
+color: white;
+font-weight: bold;
+margin-top: 10px;
+font-size: 30px;
+`
 
 export const link = "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/vinicius-fredeanelle-turing"
 
@@ -28,29 +36,30 @@ function Index() {
     const [body, setBody] = useState(true)
     const [persons, setPersons]=useState({})
 
-   const a = ()=>{
-       setBody(!body)
-    }
     
-    const pegaPessoa = ()=>{
-    axios
-    .get(`${link}/person`)
-    .then(response=>{
-      setPersons(response.data.profile)
-    }).catch(err=>{
-      console.log(err.message)
-    })
-  }
-  useEffect(()=>{
-    pegaPessoa()
-  }, [])
-  
+    const a = ()=>{
+        setBody(!body)
+      }
+      
+      const pegaPessoa = ()=>{
+      axios
+      .get(`${link}/person`)
+      .then(response=>{
+        setPersons(response.data.profile)
+      }).catch(err=>{
+        console.log(err.message)
+      })
+    }
+    useEffect(()=>{
+      pegaPessoa()
+    }, [])
+    
     const teste = body === true ? <BodyMatch pegaPessoa={pegaPessoa} persons={persons}/> : <BodyList persons={persons}/>
     const foot = body === true ? <Footer persons={persons} pegaPessoa={pegaPessoa}/> : console.log("Aaaa")
   return (
       <Main>
         <Header/>
-        <Logo a={a}/>
+        <Logo a={a} body={body}/>
         {teste}
         {foot}
       </Main>

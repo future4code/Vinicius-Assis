@@ -9,13 +9,13 @@ display: flex;
 justify-content: center;
 align-items: center;
 `
-const H2 = styled.h2`
+const H2 = styled.h1`
 display: inline;
 background: -webkit-linear-gradient(#00ced1, #333);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 `
-const H22 = styled.h2`
+const H22 = styled.h1`
 display: inline;
 background: -webkit-linear-gradient(red, black);
   -webkit-background-clip: text;

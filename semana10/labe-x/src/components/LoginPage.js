@@ -1,5 +1,6 @@
 import React from 'react';
 import { useHistory } from "react-router-dom";
+import {Main} from "./Styled/styles";
 
 function LoginPage() {
     const history = useHistory();
@@ -11,7 +12,7 @@ function LoginPage() {
     }
 
   return (
-    <div>
+    <Main>
       <button onClick={goToHome}>Home</button>
       <div>
         <label>Email:</label>
@@ -24,7 +25,7 @@ function LoginPage() {
       <div>
         <button onClick={goToHomeLogin}>Fazer Login</button>
       </div>
-    </div>
+    </Main>
   );
 }
 export default LoginPage;

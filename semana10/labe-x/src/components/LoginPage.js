@@ -1,16 +1,11 @@
 import React from 'react';
 import { useHistory } from "react-router-dom";
 import {Main} from "./Styled/styles";
+import useUrl from "./Funcoes"
 
 function LoginPage() {
-    const history = useHistory();
-    const goToHome = ()=>{
-      history.push("/")
-    }
-    const goToHomeLogin = ()=>{
-        history.push("/home/login")
-    }
-
+    const [goToHome]=  useUrl("/")
+    const [goToHomeLogin] = useUrl("/home/login")
   return (
     <Main>
       <button onClick={goToHome}>Home</button>

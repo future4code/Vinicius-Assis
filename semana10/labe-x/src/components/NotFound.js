@@ -1,23 +1,18 @@
 import React from 'react';
 import { useHistory, useParams} from "react-router-dom";
 import styled from "styled-components";
+import useUrl from "./Funcoes"
 
+function Not() {
 
-function Header() {
-  const history = useHistory();
-  const pathParams = useParams();
-  const goToLogin = ()=>{
-    history.push("/login/logando")
-  } 
-  const goToHome =() =>{
-    history.push("/home")
-  }
+  const [goToHome] = useUrl("/home")
 
   return (
     <div>
+        <button onClick={goToHome}>Voltar para Home</button>
         <h1>404</h1>
-        <div>Se deseja fazer seu Login, digite "login/logando" na url invés de apenas "login"!</div>
+        <div>Página não encontrada</div>
     </div>
   );
 }
-export default Header;
+export default Not;

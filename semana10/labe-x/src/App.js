@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {Switch, Route, BrowserRouter} from "react-router-dom"
 import HomePage from './components/HomePage';
 import RegistrationPage from './components/RegistrationPage';
@@ -10,43 +10,48 @@ import Footer from "./components/Footer/Footer"
 import TravelsPage from "./components/TravelsPage"
 
 function App() {
+  const [logado, setLogado] = useState(false)
+
+  const muda = ()=>{
+    setLogado(!logado)
+  } 
   return (
     <Body>
       <BrowserRouter>
         <Switch>
           <Route exact path="/">
-            <Header/>
+            <Header muda={muda} logado={logado}/>
             <HomePage/>
             <Footer/>
           </Route>
           <Route exact path="/home">
-            <Header/>
+            <Header muda={muda} logado={logado}/>
             <HomePage/>
             <Footer/>
           </Route>
           <Route exact path="/home/:tipo">
-            <Header/>
+            <Header muda={muda} logado={logado}/>
             <HomePage/>
             <Footer/>
           </Route>
           <Route exact path="/inscricao">
-            <Header/>
+            <Header muda={muda} logado={logado}/>
             <RegistrationPage/>
             <Footer/>
           </Route>
-          <Route exact path="/login">
-            <Header/>
-            <NotFound/>
-            <Footer/>
-          </Route>
           <Route exact path="/login/:log">
-            <Header/>
+            <Header muda={muda} logado={logado}/>
             <LoginPage/>
             <Footer/>
           </Route>
-          <Route exact path="/viagens">
-            <Header/>
+          <Route exact path="/logado/viagens">
+            <Header muda={muda} logado={logado}/>
             <TravelsPage/>
+            <Footer/>
+          </Route>
+          <Route path="/">
+            <Header muda={muda} logado={logado}/>
+            <NotFound/>
             <Footer/>
           </Route>
         </Switch>

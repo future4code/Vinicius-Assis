@@ -2,6 +2,7 @@ import React from 'react';
 import { useHistory, useParams} from "react-router-dom";
 import styled from "styled-components";
 import {But, Main} from "./Styled/styles"
+import useUrl from "./Funcoes"
 
 const Header = styled.header`
 display: flex;
@@ -9,14 +10,10 @@ height: 7vh;
 background-color: black;
 `
 function HomePage() {
-    const history = useHistory();
     const pathParams = useParams();
-    const goToRecord = () =>{
-        history.push("/inscricao")
-    }
-    const goToTravel = ()=>{
-        history.push("/viagens")
-    }
+    const [goToRecord] = useUrl("/inscricao")
+    const [goToTravel] =  useUrl("/logado/viagens")
+
   return (
     <Main>
         

@@ -1,24 +1,57 @@
-import React from 'react';
+import React, {useState, useEffect } from "react";
+import axios from "axios";
 import { useHistory } from "react-router-dom";
 import {Main} from "./Styled/styles";
 import useUrl from "./Funcoes"
 
+const link = "https://us-central1-labenu-apis.cloudfunctions.net/labeX/vinicius-fredeanelle-turing"
+
 function LoginPage() {
-    const [goToHome]=  useUrl("/")
-    const [goToHomeLogin] = useUrl("/home/login")
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const [goToHome]=  useUrl("/")
+  const [goToHomeLogin] = useUrl("/home/login")
+
+  const onChangeEmail = event => {
+    setEmail(event.target.value);
+  };
+
+  const onChangePassword = event => {
+    setPassword(event.target.value);
+  };
+
+  const login = () => {
+    const body = {
+      email: email,
+      password: password
+    };
+    axios
+      .post(`${link}/login`, body)
+      .then(response => {
+        window.localStorage.setItem("token", response.data.token);
+        {goToHomeLogin()}
+      })
+      .catch(err => {
+        console.log(err.message);
+        alert("Acesso Negado")
+      });
+  };
+
+
   return (
     <Main>
       <button onClick={goToHome}>Home</button>
       <div>
         <label>Email:</label>
-        <input/>
+        <input value={email} onChange={onChangeEmail}/>
       </div>
       <div>
         <label>Senha:</label>
-        <input/>
+        <input value={password} onChange={onChangePassword}/>
       </div>
       <div>
-        <button onClick={goToHomeLogin}>Fazer Login</button>
+        <button onClick={login}>Fazer Login</button>
       </div>
     </Main>
   );

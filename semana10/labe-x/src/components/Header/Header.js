@@ -14,11 +14,21 @@ function Header() {
    const pathParams = useParams();
    const [goToLogin] = useUrl("/login/logando")
    const [goToHome] = useUrl("/home")
+   const displayButton = pathParams.log === "logando" ? "none" : "block"
+
+   const deslogar = ()=>{
+    window.localStorage.removeItem("token")
+    goToHome()
+   }
+    
+   //
 
   return (
     <Head>
         <h1>LabeX</h1>
-        <But display={pathParams.log === "logando" ? "none" : "block"}cor={pathParams.tipo === "login"  ? "red" : "blue"} onClick={pathParams.tipo === "login" ? goToHome : goToLogin}>{pathParams.tipo === "login" ? "Logout" : "Login"}</But>
+        {pathParams.tipo === "login" ?
+          <But display={displayButton} cor={"red"} onClick={deslogar}>Logout</But> :
+          <But display={displayButton} cor={"blue"} onClick={goToLogin}>Login</But>}
     </Head>
   );
 }

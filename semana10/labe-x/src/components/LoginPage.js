@@ -48,7 +48,7 @@ function LoginPage() {
       </div>
       <div>
         <label>Senha:</label>
-        <input value={password} onChange={onChangePassword}/>
+        <input value={password} type={"password"} onChange={onChangePassword}/>
       </div>
       <div>
         <button onClick={login}>Fazer Login</button>

@@ -10,6 +10,7 @@ const useUrl = a =>{
 }
 export default useUrl
 
+export const link = "https://us-central1-labenu-apis.cloudfunctions.net/labeX/vinicius-fredeanelle-turing"
 // export const goToHome = ()=>{
 //    history.push("/")
 // }

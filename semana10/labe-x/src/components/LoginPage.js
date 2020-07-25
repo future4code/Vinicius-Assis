@@ -2,15 +2,13 @@ import React, {useState, useEffect } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import {Main} from "./Styled/styles";
-import useUrl from "./Funcoes"
-
-const link = "https://us-central1-labenu-apis.cloudfunctions.net/labeX/vinicius-fredeanelle-turing"
+import useUrl, {link} from "./Funcoes"
 
 function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const [goToHome]=  useUrl("/")
+  const [goToHome]=  useUrl("/home")
   const [goToHomeLogin] = useUrl("/home/login")
 
   const onChangeEmail = event => {

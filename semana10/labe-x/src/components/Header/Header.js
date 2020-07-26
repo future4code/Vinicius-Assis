@@ -11,12 +11,19 @@ color: white;
 `
 
 function Header() {
+   const history = useHistory();
    const pathParams = useParams();
    const location = useLocation();
    const [goToLogin] = useUrl("/login/logando")
    const [goToHome] = useUrl("/home")
    const displayButton = pathParams.log === "logando" ? "none" : "block"
-
+   const goToInitialPage = ()=> {
+      if(location.pathname === "/home" || location.pathname === "/" || location.pathname === "/inscricao" || location.pathname === "/login/logando"){
+      history.push("/home")
+      }else{
+        history.push("/home/login")
+      }
+    }
    const deslogar = ()=>{
     window.localStorage.removeItem("token")
     goToHome()
@@ -30,7 +37,7 @@ function Header() {
    }
   return (
     <Head>
-        <h1>LabeX</h1>
+        <h1 onClick={goToInitialPage}>LabeX</h1>
         {renderizaBotao()}
        
     </Head>

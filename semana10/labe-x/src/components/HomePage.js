@@ -13,6 +13,8 @@ function HomePage() {
     const pathParams = useParams();
     const [goToRecord] = useUrl("/inscricao")
     const [goToTravel] =  useUrl("/logado/viagens")
+    const [newTravel] =  useUrl("/logado/nova-viagem")
+    const [approvalPage] =  useUrl("/logado/pagina-de-aprovacao")
 
   return (
     <Main>
@@ -23,11 +25,11 @@ function HomePage() {
         </div>
         <div>
             {pathParams.tipo === "login" ? <p>Descrição</p> : console.log("Não Logado")}
-            {pathParams.tipo === "login" ? <button>Criar Nova Viagem</button> : console.log("Não Logado")} 
+            {pathParams.tipo === "login" ? <button onClick={newTravel}>Criar Nova Viagem</button> : console.log("Não Logado")} 
         </div>
         <div>
             {pathParams.tipo === "login" ? <p>Descrição</p> : console.log("Não Logado")} 
-            {pathParams.tipo === "login" ? <button>Aprovação de Candidatos</button> : console.log("Não Logado")}
+            {pathParams.tipo === "login" ? <button onClick={approvalPage}>Aprovação de Candidatos</button> : console.log("Não Logado")}
         </div>
     </Main>
   );

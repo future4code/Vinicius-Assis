@@ -8,6 +8,8 @@ import Header from "./components/Header/Header"
 import NotFound from "./components/NotFound"
 import Footer from "./components/Footer/Footer"
 import TravelsPage from "./components/TravelsPage"
+import CreateTravelPage from "./components/CreateTravelPage"
+import ApprovalPage from "./components/ApprovalPage"
 
 function App() {
   const [logado, setLogado] = useState(false)
@@ -19,12 +21,12 @@ function App() {
     <Body>
       <BrowserRouter>
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/home">
             <Header muda={muda} logado={logado}/>
             <HomePage/>
             <Footer/>
           </Route>
-          <Route exact path="/home">
+          <Route exact path="/">
             <Header muda={muda} logado={logado}/>
             <HomePage/>
             <Footer/>
@@ -47,6 +49,16 @@ function App() {
           <Route exact path="/logado/viagens">
             <Header muda={muda} logado={logado}/>
             <TravelsPage/>
+            <Footer/>
+          </Route>
+          <Route exact path="/logado/nova-viagem">
+            <Header muda={muda} logado={logado}/>
+            <CreateTravelPage/>
+            <Footer/>
+          </Route>
+          <Route exact path="/logado/pagina-de-aprovacao">
+            <Header muda={muda} logado={logado}/>
+            <ApprovalPage/>
             <Footer/>
           </Route>
           <Route path="/">

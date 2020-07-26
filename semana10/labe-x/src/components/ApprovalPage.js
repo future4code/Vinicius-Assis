@@ -6,10 +6,14 @@ import useUrl from "./Funcoes"
 
 function ApprovalPage() {
 const [goToHome]=  useUrl("/home/login")
+
   return (
     <Main>
         <button onClick={goToHome}>Home</button>
-       CCCCCCCCCCCCCCC
+        <div>
+          <img src={"https://media1.giphy.com/media/14uQ3cOFteDaU/giphy.gif"}/>
+        </div>
+       <h2>Ops! Página em manutenção! Em breve estará disponivel para acesso. Agradecemos a compreensão.</h2>
     </Main>
   );
 }

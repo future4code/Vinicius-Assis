@@ -22,7 +22,7 @@ function Footer() {
 
   return (
     <Foot cor={pathParams.tipo === "login" ? "red" : "blue"}>
-        <h1>Desenvolvido por @ViníciusFredeanelle </h1>
+        <h1>Copyright© - Developed by: Vinícius Fredeanelle</h1>
     </Foot>
   );
 }

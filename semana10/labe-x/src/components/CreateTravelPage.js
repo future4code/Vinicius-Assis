@@ -51,32 +51,35 @@ const criaViagem = ()=>{
         console.log(err.message)
         console.log(`${nome}, ${planeta}, ${data}, ${descricao}, ${duracao}`)
     })
+    alert(`Ops! Houve um erro Request failed with status code 401, estamos travalhando nisso! Em breve essa função funcionará!`)
 }
 
   return (
     <Main>
         <button onClick={goToHome}>Home</button>
-       <div>
-           <label>Nome</label>
-         <input value={nome} onChange={onchangeNome}/>
-       </div>
-       <div>
-           <label>Planeta</label>
-         <input value={planeta} onChange={onchangePlaneta} /> 
-       </div>
-       <div>
-           <label>Data</label>
-         <input value={data} onChange={onchangeData}  type={"date"}/>
-       </div>
-       <div>
-         <label>Descrição</label>
-         <input value={descricao} onChange={onchangeDescricao} />   
-       </div>
-       <div>
-         <label>Duração</label>
-         <input value={duracao} onChange={onchangeDuracao} />
-       </div>
-       <button onClick={criaViagem}>Cria Viagem</button>
+        <form onSubmit={criaViagem}>
+          <div>
+            <label>Nome</label>
+            <input value={nome} onChange={onchangeNome} required/>
+          </div>
+          <div>
+            <label>Planeta</label>
+            <input value={planeta} onChange={onchangePlaneta} required/> 
+          </div>
+          <div>
+              <label>Data</label>
+            <input value={data} onChange={onchangeData} type={"date"} required/>
+          </div>
+          <div>
+            <label>Descrição</label>
+            <input value={descricao} onChange={onchangeDescricao} required/>   
+          </div>
+          <div>
+            <label>Duração</label>
+            <input value={duracao} onChange={onchangeDuracao} required/>
+          </div>
+          <button>Cria Viagem</button>
+        </form>
     </Main>
   );
 }

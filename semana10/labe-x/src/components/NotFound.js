@@ -9,7 +9,7 @@ function Not() {
 
   return (
     <div>
-        <button onClick={goToHome}>Voltar para Home</button>
+        <button onClick={goToHome}>Ir para Página Inicial</button>
         <h1>404</h1>
         <div>Página não encontrada</div>
     </div>

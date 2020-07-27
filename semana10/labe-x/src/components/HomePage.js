@@ -29,16 +29,16 @@ function HomePage() {
     const mudaCor = ()=>{
         if(location.pathname === "/" || location.pathname === "/home" || 
         location.pathname === "/inscricao" || location.pathname === "/login/logando"){
-          return "1.5px solid blue"
+          return "1.5px solid #008B8B"
         }else{
-          return "1.5px solid red"
+          return "1.5px solid #8C0E6B"
         }
       }
     const mudaMainColuna = ()=>{
         if(location.pathname === "/" || location.pathname === "/home"){
             return "1fr 1fr 1fr 1fr"
         }else if(location.pathname === "/home/login"){
-            return ""
+            return "1fr 1fr 1fr 1fr"
         }
     }
     const mudaMainLinha = ()=>{
@@ -48,6 +48,15 @@ function HomePage() {
             return "1fr 1fr 1fr"
         }
     }
+
+    const mudaColor = ()=>{
+        if(location.pathname === "/" || location.pathname === "/home" || 
+        location.pathname === "/inscricao" || location.pathname === "/login/logando"){
+          return "#00D9D9"
+        }else{
+          return "#B509FF"
+        }
+      }
   return (
     <Main borda={mudaCor} display={"grid"} coluna={mudaMainColuna} linha={mudaMainLinha}>
         <Div ColunaGrid={"1/5"} borda={"1.5px solid black;"}>
@@ -57,19 +66,16 @@ function HomePage() {
             {pathParams.tipo === "login" ? console.log("A") : <H2 ColunaGrid={"1/2"}>Venha participar dessa experiência! <br></br> Basta clicar no botão e se inscrever, você vai amar!</H2>}
         </Div>
         <Div ColunaGrid={"4/4"} LinhaGrid={"3/3"}>
-            {pathParams.tipo === "login" ? <But onClick={goToTravel} background={"black"}>Lista de Viagens</But> : <But onClick={goToRecord} background={"black"} cor={"#00D9D9"}>Ir para página de Incrição</But>}
+            {pathParams.tipo === "login" ? <But onClick={goToTravel} fonte={"20px"} background={"black"} hover={mudaColor} radius={"10px"} cor={"white"}>Lista de Viagens</But> : <But radius={"10px"} fonte={"20px"} onClick={goToRecord} background={"black"} hover={mudaColor} cor={"white"} margem={"0px 30px 0px 0px"} altura={"80%"}>Ir para página de Incrição</But>}
         </Div>
         <Div>
             {pathParams.tipo === "login" ? <p>Descrição</p> : console.log("Não Logado")}
         </Div>
         <Div>
-            {pathParams.tipo === "login" ? <But onClick={newTravel}>Criar Nova Viagem</But> : console.log("Não Logado")} 
+            {pathParams.tipo === "login" ? <But onClick={newTravel} fonte={"20px"} background={"black"} hover={mudaColor} radius={"10px"} cor={"white"}>Criar Nova Viagem</But> : console.log("Não Logado")} 
         </Div>
         <Div>
             {pathParams.tipo === "login" ? <p>Descrição</p> : console.log("Não Logado")} 
-        </Div>
-        <Div>
-            {pathParams.tipo === "login" ? <But onClick={approvalPage}>Aprovação de Candidatos</But> : console.log("Não Logado")}
         </Div>
     </Main>
   );

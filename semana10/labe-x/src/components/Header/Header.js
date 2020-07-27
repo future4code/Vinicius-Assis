@@ -18,6 +18,10 @@ height: 100%;
 `
 const H1 = styled.h1`
 color: ${props => props.cor};
+cursor: pointer;
+:hover{
+      color: ${props => props.hover};
+    }
 `
 function Header() {
    const history = useHistory();
@@ -39,12 +43,13 @@ function Header() {
    }
    const renderizaBotao = ()=>{
      if(location.pathname === "/" || location.pathname === "/home" || location.pathname === "/inscricao"){
-        return <But display={displayButton} cor={"#00D9D9"} onClick={goToLogin}>Login</But>
+        return <But display={displayButton} margem={"0px 30px 0px 0px"} cumprimento={"7%"} altura={"50%"} radius={"5px"} fonte={"15px"} hover={mudaColor} cor={"black"} onClick={goToLogin}>Login</But>
      }else {
-        return <But display={displayButton} cor={"#B509FF"} onClick={deslogar}>Logout</But>
+        return <But display={displayButton} margem={"0px 30px 0px 0px"} cumprimento={"7%"} altura={"50%"} radius={"5px"} fonte={"15px"} hover={mudaColor} cor={"black"} onClick={deslogar}>Logout</But>
      }
    }
-   const mudaLetra = ()=>{
+
+   const mudaColor = ()=>{
     if(location.pathname === "/" || location.pathname === "/home" || 
     location.pathname === "/inscricao" || location.pathname === "/login/logando"){
       return "#00D9D9"
@@ -52,9 +57,18 @@ function Header() {
       return "#B509FF"
     }
   }
+
+   const mudaLetra = ()=>{
+    if(location.pathname === "/" || location.pathname === "/home" || 
+    location.pathname === "/inscricao" || location.pathname === "/login/logando"){
+      return "#008B8B"
+    }else{
+      return "#8C0E6B"
+    }
+  }
   return (
     <Head>
-        <H1 cor={mudaLetra} onClick={goToInitialPage}>LabeX</H1>
+        <H1 cor={mudaLetra} hover={mudaColor} onClick={goToInitialPage}>LabeX</H1>
         {renderizaBotao()}
        
     </Head>

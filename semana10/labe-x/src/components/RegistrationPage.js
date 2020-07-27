@@ -30,7 +30,7 @@ function RegistrationPage() {
 
     const [viagens, setViagens]= useState([])
     const history = useHistory();
-    const [goToHome] = useUrl("/")
+    const [goToHome] = useUrl("/home")
 
     const handleInputChange = event => {
       const { name, value } = event.target;

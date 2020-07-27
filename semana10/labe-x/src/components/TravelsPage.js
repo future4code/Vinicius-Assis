@@ -25,8 +25,13 @@ function TravelPage() {
     pegaViagens()
   }, [])
 
+  const detail = ()=>{
+    axios
+    .then(`${link}`)
+  }
+
   const abc = viagens.map((a)=>{
-    return <div>{a.name}</div>
+    return <div>{a.name} <span>(i)</span></div>
   })
   return (
     <Main>

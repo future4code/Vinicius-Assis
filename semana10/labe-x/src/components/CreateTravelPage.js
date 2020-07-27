@@ -13,6 +13,7 @@ const [planeta, setPlaneta]= useState("")
 const [data, setData]= useState("")
 const [descricao, setDescricao]= useState("")
 const [duracao, setDuracao]= useState("")
+const history = useHistory();
 
 const onchangeNome = event =>{
     setNome(event.target.value)
@@ -33,8 +34,24 @@ const onchangeDescricao = event =>{
 const onchangeDuracao = event =>{
     setDuracao(event.target.value)
 }
+const token = window.localStorage.getItem("token");
 
-const criaViagem = ()=>{
+useEffect(() => {
+
+  if (token === null) {
+    history.push("/login/logando");
+  } else {
+    console.log("Hahaha")
+  }
+}, [history]);
+
+const criaViagem = (event)=>{
+  event.preventDefault()
+  const headers = {
+    headers: {
+      auth: token
+    }
+  }
     const body = {
         name: nome,
         planet: planeta,
@@ -43,7 +60,7 @@ const criaViagem = ()=>{
         durationInDays: duracao
     }
     axios
-    .post(`${link}/trips`, body)
+    .post(`${link}/trips`, body, headers)
     .then(()=>{
         alert("Viagem Criada")
     })
@@ -51,7 +68,6 @@ const criaViagem = ()=>{
         console.log(err.message)
         console.log(`${nome}, ${planeta}, ${data}, ${descricao}, ${duracao}`)
     })
-    alert(`Ops! Houve um erro Request failed with status code 401, estamos travalhando nisso! Em breve essa função funcionará!`)
 }
 
   return (

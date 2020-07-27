@@ -8,6 +8,8 @@ import useUrl, {link} from "./Funcoes"
 function TravelPage() {
   const [viagens, setViagens]= useState([])
   const [goToHome]=  useUrl("/home/login")
+  const token = window.localStorage.getItem("token");
+  const [detalhes, setDetalhes]= useState([])
 
   const pegaViagens = () =>{
     axios
@@ -25,19 +27,55 @@ function TravelPage() {
     pegaViagens()
   }, [])
 
-  const detail = ()=>{
+  const detail = (a)=>{
+    const headers = {
+      headers: {
+        auth: token
+      }
+    }
     axios
-    .then(`${link}`)
+    .get(`${link}/trip/${a}`, headers)
+    .then(response=>{
+      setDetalhes(response.data.trip)
+      console.log(detalhes)
+    })
+    .catch(err=>{
+      console.log(err.message)
+    })
   }
 
   const abc = viagens.map((a)=>{
-    return <div>{a.name} <span>(i)</span></div>
+    return <div>{a.name} <span onClick={()=>detail(a.id)}>(i)</span></div> 
+
   })
+  const candidato = detalhes.candidates && detalhes.candidates.map((a)=>{
+   return <li>{a.name}</li>
+  })
+
+  const abacate = detalhes.name && <div>
+    <h3>{detalhes.name}</h3>
+  <ul>
+    <li>
+      {detalhes.planet}
+    </li>
+    <li>
+      {detalhes.durationInDays} 
+    </li>
+    <li>
+      {detalhes.description}
+    </li>
+  </ul>
+  <h4>Candidatos a viagem:</h4>
+  <ul>
+    {candidato}
+  </ul>
+</div>
+
   return (
     <Main>
       <button onClick={goToHome}>Home</button>
-        AAAAAAAAAAAA
         {abc}
+        {abacate}
     </Main>
   );
 }

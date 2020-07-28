@@ -1,9 +1,27 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+  test("O usuário deve poder criar um novo post.", () => {
+    // preparação
+    const {getByPlaceholderText, getByText} = render(<App/>);
+    
+    const digita = getByPlaceholderText(/Novo post/i);
+
+    const botaoPostar = getByText(/Adicionar/i);
+  
+    // execução
+
+    fireEvent.change(digita, {
+      target:{
+        value: "post"
+      }
+    })
+
+    fireEvent.click(botaoPostar);
+    // verificação
+  
+  
+    expect(getByText("post")).toBeInTheDocument();
+  
+  });

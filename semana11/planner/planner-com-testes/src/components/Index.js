@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react"
 //import {Switch, Route, BrowserRouter} from "react-router-dom"
 
-function Router() {
+function Index() {
     return (
       <div>
           aaa
@@ -9,4 +9,4 @@ function Router() {
     );
   }
   
-  export default Router;
+  export default Index;

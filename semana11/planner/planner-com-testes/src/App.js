@@ -1,11 +1,11 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Router from "./components/Router"
+import Index from "./components/Index"
 
 function App() {
   return (
-    <Router/>
+    <Index/>
   );
 }
 

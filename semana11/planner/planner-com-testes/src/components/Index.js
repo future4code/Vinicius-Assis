@@ -1,10 +1,21 @@
-import React, {useState, useEffect} from "react"
-//import {Switch, Route, BrowserRouter} from "react-router-dom"
+import React, {useState, useEffect} from "react";
+
+const url = "https://us-central1-labenu-apis.cloudfunctions.net/generic/planner-turing-vinicius-fredeanelle";
 
 function Index() {
+  const [tarefas, setTarefas]= useState([]);
+  const [inputCriaTarefa, setInputCriaTarefa]= useState("");
+
+  const onChangeCriaTarefa = (event)=>{
+    setInputCriaTarefa(event.target.value)
+  }
+  const onClick = ()=>{
+    console.log(inputCriaTarefa)
+  }
     return (
       <div>
-          aaa
+        <input value={inputCriaTarefa} onChange={onChangeCriaTarefa}/>
+        <button onClick={onClick}>Aaaa</button>
       </div>
     );
   }

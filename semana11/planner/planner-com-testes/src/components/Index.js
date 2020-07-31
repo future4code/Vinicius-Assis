@@ -18,9 +18,7 @@ function Index() {
     axios
     .get(url)
     .then(response=>{
-     console.log(response.data)
      setTarefas(response.data)
-     console.log(tarefas)
     })
     .catch(err=>{
       console.log(err.message)
@@ -32,8 +30,17 @@ function Index() {
     })
     return (
       <div>
-        <input value={inputCriaTarefa} onChange={onChangeCriaTarefa}/>
-        <button onClick={onClick}>Aaaa</button>
+        <input placeholder={"Criar Tarefa"} value={inputCriaTarefa} onChange={onChangeCriaTarefa}/>
+        <select>
+          <option value={"Segunda-Feira"}>Segunda-Feira</option>
+          <option value={"Terça-Feira"}>Terça-Feira</option>
+          <option value={"Quarta-Feira"}>Quarta-Feira</option>
+          <option value={"Quinta-Feira"}>Quinta-Feira</option>
+          <option value={"Sexta-Feira"}>Sexta-Feira</option>
+          <option value={"Sábado"}>Sábado</option>
+          <option value={"Domingo"}>Domingo</option>
+        </select>
+        <button onClick={onClick}>Adicionar</button>
         <ul>
           {pegaTarefas}
         </ul>
